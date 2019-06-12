@@ -1,0 +1,21 @@
+CREATE TABLE t_address(
+aid	 INT AUTO_INCREMENT COMMENT '收获地址数据id',
+uid 	INT  COMMENT '用户id',
+name  VARCHAR(20) 	COMMENT '收货人姓名',
+province  CHAR(6)	COMMENT '省的代号',
+city	 CHAR(6) COMMENT '市的代号',
+area  CHAR(6)	COMMENT '区的代号',
+district	  VARCHAR(50) COMMENT '省市区的名称',
+zip	 CHAR(6) COMMENT '邮编',
+address VARCHAR(50) 	COMMENT '详细地址',
+phone VARCHAR(20) COMMENT '手机',
+tel VARCHAR(20) COMMENT '固话',
+tag	 VARCHAR(10) COMMENT '地址类型',
+is_default INT COMMENT '是否默认：0-非默认，1-默认',
+created_user VARCHAR(20)	COMMENT '创建人',
+created_time DATETIME COMMENT '创建时间',
+modified_user VARCHAR(20) COMMENT '最后修改人',
+modified_time DATETIME COMMENT '最后修改时间',
+PRIMARY KEY(aid)
+)DEFAULT CHARSET=UTF8;
+

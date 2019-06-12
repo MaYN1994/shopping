@@ -1,0 +1,45 @@
+CREATE TABLE t_cart(
+	cid INT AUTO_INCREMENT COMMENT 'id',
+	uid INT COMMENT '用户id',
+	gid BIGINT COMMENT '商品id',
+	num INT COMMENT '数量',
+	created_user VARCHAR(20) COMMENT '创建人',
+	created_time DATETIME COMMENT '创建时间',
+   modified_user VARCHAR(20)	COMMENT '最后修改人',
+	modified_time DATETIME COMMENT '最后修改时间',
+	PRIMARY KEY(cid)	
+)DEFAULT CHARSET=UTF8;
+
+CREATE TABLE t_order (
+	oid INT AUTO_INCREMENT COMMENT '订单id',
+	uid INT COMMENT '用户id',
+	name VARCHAR(20) COMMENT '收货人姓名',
+	phone VARCHAR(20) COMMENT '收货电话',
+	address VARCHAR(100) COMMENT '收货地址',
+	total_price BIGINT COMMENT '总价',
+	state INT COMMENT '状态 0-未支付 1-已支付 2-已取消 3-已完成',
+	order_time DATETIME COMMENT '下单时间',
+	pay_time DATETIME COMMENT '支付时间',
+	created_user VARCHAR(20) COMMENT '创建人',
+	created_time DATETIME COMMENT '创建时间',
+	modified_user VARCHAR(20) COMMENT '最后修改人',
+	modified_time DATETIME COMMENT '最后修改时间',
+	PRIMARY KEY(oid)
+)DEFAULT CHARSET=UTF8;
+
+CREATE TABLE t_order_item (
+    id INT AUTO_INCREMENT COMMENT '订单商品id',
+    oid INT COMMENT '订单id',
+    gid BIGINT COMMENT '商品id',
+    title VARCHAR(100) COMMENT '商品标题',
+    image VARCHAR(500) COMMENT '商品图片',
+    price BIGINT COMMENT '商品价格',
+    num INT COMMENT '数量',
+    created_user VARCHAR(20) COMMENT '创建人',
+    created_time DATETIME COMMENT '创建时间',
+    modified_user VARCHAR(20) COMMENT '最后修改人',
+    modified_time DATETIME COMMENT '最后修改时间',
+    PRIMARY KEY(id)
+) DEFAULT CHARSET=UTF8;
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<!-- 该xml文件对应那个接口文件 -->
+<mapper namespace="cn.tedu.store.mapper.PoiMapper">
+	<!-- Integer addnew(Car car) -->
+	<insert id="addnew"  useGeneratedKeys="true" keyProperty="cid">
+		insert into t_car (
+			cartype,VIN,
+			chassis_num,produce_time,
+			engine_num ,engine_type)
+		values(
+			#{cartype},#{VIN},
+			#{chassisNum},#{produceTime},
+			#{engineNum} ,#{engineType}
+		)
+	</insert>
+</mapper>
